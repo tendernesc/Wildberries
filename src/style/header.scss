@@ -1,0 +1,87 @@
+@import 'variables';
+  
+#root{
+  background-color: rgb(255, 255, 255);
+
+  .header{
+    width: $width-wrapper;
+    margin: 0 auto;
+
+    .header-top{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 30px;
+
+      .header-top__text{
+        width: 130px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid rgb(216, 107, 243);
+        color: rgb(128, 2, 160);
+        border-radius: 5px;
+        font-family: $popins;
+        font-weight: 400;
+      }
+
+      .header-top__input{
+        width: 900px;
+        height: auto;
+        border: 1px solid rgb(216, 107, 243);
+        border-radius: 5px;
+        text-align: center;
+        outline: none;
+        font-family: $popins;
+        letter-spacing: 1px;
+        font-size: 14px;
+      }
+
+      .header-top__button{
+        width: 130px;
+        height: auto;
+        border: 1px solid rgb(216, 107, 243);
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        font-family: $popins;
+        font-size: 14px;
+        background-color:rgb(224, 146, 235); 
+        font-weight: 700;
+      }
+    }
+  }
+
+  .main{
+    margin: 0 auto;
+
+    .main-wrapper{
+      width: $width-wrapper;
+      margin: 0 auto;
+
+      .main-wrapper-slider{
+        margin: 0 auto;
+        height: 220px;
+        width: 1200px;
+        border: 1px solid rgb(216, 107, 243);
+        border-radius: 30px;
+        margin-bottom: 30px;
+      }
+
+      .main-wrapper__info{
+        font-family: $popins;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      
+      .main-wrapper-cards{
+        width: 1000px;
+        height: 200px;
+        border: 1px solid black;
+      }
+    }
+  }
+}
+
+
