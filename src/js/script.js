@@ -8,17 +8,13 @@ function createElement(tag, className, placeAppend, text, id) {
   return element;
 }
 
-
-
 let activeImage = null;
 let cardsInBasket = [];
-
 
 //Корневой элемент
 const root = document.createElement('div');
 root.id = 'root';
 document.body.append(root);
-
 
 //создание шапки проекта
 const header = createElement('header', 'header', root, '', 'header');
@@ -101,7 +97,7 @@ async function printCards(cards) {
 
     //Обработчик событий для добавлении карточи в корзину
     addToBasket.addEventListener('click', function () {
-
+      
       //Создаем объект с данными о товаре
       let cardToAdd = {
         title: card.title,
