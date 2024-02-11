@@ -8,17 +8,13 @@ function createElement(tag, className, placeAppend, text, id) {
   return element;
 }
 
-
-
 let activeImage = null;
 let cardsInBasket = [];
-
 
 //Корневой элемент
 const root = document.createElement('div');
 root.id = 'root';
 document.body.append(root);
-
 
 //создание шапки проекта
 const header = createElement('header', 'header', root, '', 'header');
@@ -101,7 +97,7 @@ async function printCards(cards) {
 
     //Обработчик событий для добавлении карточи в корзину
     addToBasket.addEventListener('click', function () {
-
+      
       //Создаем объект с данными о товаре
       let cardToAdd = {
         title: card.title,
@@ -166,10 +162,11 @@ async function printCards(cards) {
     });
 
   }
+  return cards;
 }
 
 //вызываем функцию для создания карточек из полученных данных
-getCards().then(data => printCards(data));
+getCards().then(data => printCards(data)).then(data => createSlider(data));
 
 //Функция для записи данных в localStorage
 function setName(){
@@ -194,3 +191,42 @@ function getName() {
 }
 
 
+
+function createSlider(data) {
+  const slider = createElement('div', 'slider', wrapper, '');
+  const sliderWrapper = createElement('div', 'slider-wrapper', slider, '');
+
+  let currentX = 0;
+  const slideWidth = 300; 
+
+  for (let i = 0; i < data.length; i++) {
+    const card = data[i];
+    const randomParam = Math.floor(Math.random() * (1000 - 1 + 1) + 1);
+    const parag = createElement('div', 'parag', sliderWrapper, '');
+    const img = createElement('img', 'picture', parag, '');
+    img.src = card.picture + `?random=${randomParam}`;
+    img.alt = card.title;
+  }
+
+  const totalSlides = data.length;
+  const visibleSlides = 4; 
+  const maxVisibleSlides = totalSlides - visibleSlides;
+
+  const prev = createElement('button', 'prev', slider, '<');
+  prev.addEventListener('click', () => {
+    if (currentX < 0) {
+      currentX += slideWidth;
+      sliderWrapper.style.transform = `translateX(${currentX}px)`;
+    }
+  });
+
+  const next = createElement('button', 'next', slider, '>');
+  next.addEventListener('click', () => {
+    if (currentX > -slideWidth * maxVisibleSlides) {
+      currentX -= slideWidth;
+      sliderWrapper.style.transform = `translateX(${currentX}px)`;
+    }
+  });
+
+  return data;
+}
