@@ -11,16 +11,17 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding-top: 20px;
-      padding-bottom: 30px;
+      padding-top: 15px;
+      padding-bottom: 20px;
+      flex-wrap: wrap;
 
       .header-top__text{
         width: 130px;
         height: 40px;
         text-align: center;
         line-height: 40px;
-        border: 1px solid rgb(216, 107, 243);
-        color: rgb(128, 2, 160);
+        background-color: rgb(128, 2, 160);
+        color: white;
         border-radius: 5px;
         font-family: $popins;
         font-weight: 400;
@@ -28,7 +29,7 @@
 
       .header-top__input{
         width: 900px;
-        height: auto;
+        height: 40px;
         border: 1px solid rgb(216, 107, 243);
         border-radius: 5px;
         text-align: center;
@@ -38,47 +39,61 @@
         font-size: 14px;
       }
 
-      .header-top__button{
+      .header-top__basket{
         width: 130px;
         height: auto;
         border: 1px solid rgb(216, 107, 243);
         border-radius: 5px;
         text-align: center;
+        line-height:40px ;
         cursor: pointer;
         font-family: $popins;
         font-size: 14px;
         background-color:rgb(224, 146, 235); 
         font-weight: 700;
       }
-    }
-  }
 
-  .main{
-    margin: 0 auto;
-
-    .main-wrapper{
-      width: $width-wrapper;
-      margin: 0 auto;
-
-      .main-wrapper-slider{
-        margin: 0 auto;
-        height: 220px;
-        width: 1200px;
+      .header-top__basket-container{
+        position: relative;
+        left: 800px;
+        margin-top: 6px;
+        height: auto;
+        width: 400px;
         border: 1px solid rgb(216, 107, 243);
-        border-radius: 30px;
-        margin-bottom: 30px;
-      }
+        border-radius: 5px;
+        display: none;
 
-      .main-wrapper__info{
-        font-family: $popins;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-      
-      .main-wrapper-cards{
-        width: 1000px;
-        height: 200px;
-        border: 1px solid black;
+        .header-top__basket-container__delete{
+          // position: relative;
+          // top: 10px;
+          // left: 270px;]
+          margin-top: 10px;
+          margin-left: 270px;
+          cursor: pointer;
+          font-size: 12px;
+          font-family: $aleo;
+          font-weight: 600;
+          background-color: rgb(206, 253, 145);
+          border: 1px solid rgb(250, 173, 142);
+          width: 120px;
+          color: rgb(243, 139, 139);
+          height: 40px;
+          border-radius: 5px;
+        }
+
+        .header-top__basket-container__ul{
+          font-family: $aleo;
+        }
+
+        .header-top__basket-container__list-item{
+          font-family: $aleo;
+          margin-left: 20px;
+          margin-bottom: 5px;
+        }
+
+        .header-top__basket-container__total{
+          margin-left: 275px;
+        }
       }
     }
   }
