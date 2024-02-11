@@ -68,25 +68,23 @@
     height: 400px;
     overflow: hidden;
     position: relative;
-}
 
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.3s ease; /* Анимация смещения */
-}
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.3s ease; /* Анимация смещения */
 
-.parag {
-    width: 300px;
-    height: 400px;
-}
+      .parag {
+        width: 300px;
+        height: 400px;
 
-.picture {
-    object-fit: cover;
-    width: 300px;
-    height: 400px;
-}
-
-.prev, .next {
+        .picture {
+          object-fit: cover;
+          width: 300px;
+          height: 400px;
+      }    
+    }
+  }
+  .prev, .next {
     position: absolute;
     top: 50%;
     font-size: 60px;
@@ -102,10 +100,18 @@
     cursor: pointer;
 }
 
-.prev {
-    left: 0;
+  .prev {
+      left: 0;
+  }
+
+  .next {
+      right: 0;
+  }
 }
 
-.next {
-    right: 0;
-}
+
+
+
+
+
+

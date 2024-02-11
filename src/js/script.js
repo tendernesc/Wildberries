@@ -196,7 +196,7 @@ function getName() {
 
 
 
-function createSlider(data) {
+async function createSlider(data) {
   const slider = createElement('div', 'slider', wrapper, '');
   const sliderWrapper = createElement('div', 'slider-wrapper', slider, '');
 
