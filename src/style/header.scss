@@ -7,6 +7,15 @@
     width: $width-wrapper;
     margin: 0 auto;
 
+    @media (max-width: 1200px) {
+      width: 95%;
+    }
+
+    .header__not-found{
+      font-size: 30px;
+      text-align: center;
+    }
+
     .header-top{
       display: flex;
       flex-direction: row;
@@ -14,6 +23,11 @@
       padding-top: 15px;
       padding-bottom: 20px;
       flex-wrap: wrap;
+
+      @media (max-width: 632px) {
+        flex-direction: column;
+        gap: 10px;
+      }
 
       .header-top__text{
         width: 130px;
@@ -25,6 +39,10 @@
         border-radius: 5px;
         font-family: $popins;
         font-weight: 400;
+
+        @media (max-width: 632px) {
+          width: 100%;
+        }
       }
 
       .header-top__input{
@@ -37,6 +55,20 @@
         font-family: $popins;
         letter-spacing: 1px;
         font-size: 14px;
+
+        @media (max-width: 1200px) {
+          width: 70%;
+          margin: 0 20px 0 20px;
+        }
+
+        @media (max-width: 1060px) {
+          width: 50%;
+        }
+
+        @media (max-width: 632px) {
+          width: 100%;
+          margin: 0;
+        }
       }
 
       .header-top__basket{
@@ -51,24 +83,33 @@
         font-size: 14px;
         background-color:rgb(224, 146, 235); 
         font-weight: 700;
+
+        @media (max-width: 632px) {
+          width: 100%;
+        }
       }
 
       .header-top__basket-container{
         position: relative;
-        left: 800px;
         margin-top: 6px;
+        margin-left: auto;
         height: auto;
         width: 400px;
         border: 1px solid rgb(216, 107, 243);
         border-radius: 5px;
         display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 10px;
+        gap: 20px;
+
+        @media (max-width: 420px) {
+          width: 100%; 
+        }
 
         .header-top__basket-container__delete{
-          // position: relative;
-          // top: 10px;
-          // left: 270px;]
           margin-top: 10px;
-          margin-left: 270px;
+          // margin-left: 270px;
           cursor: pointer;
           font-size: 12px;
           font-family: $aleo;
@@ -79,6 +120,7 @@
           color: rgb(243, 139, 139);
           height: 40px;
           border-radius: 5px;
+          align-self: flex-end;
         }
 
         .header-top__basket-container__ul{
@@ -92,7 +134,8 @@
         }
 
         .header-top__basket-container__total{
-          margin-left: 275px;
+          // margin-left: 275px;
+          align-self: flex-end;
         }
       }
     }
