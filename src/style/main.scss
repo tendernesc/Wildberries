@@ -17,12 +17,12 @@
         font-family: $popins;
         font-weight: 700;
         padding-left: 10px;
+        margin-bottom: 15px;
       }
       
       .main-wrapper-cards{
         width: auto;
         height: auto;
-        // display: inline-flex;
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
@@ -58,10 +58,6 @@
           @media (max-width: 780px) {
             width: 145px;
           }
-
-          @media (max-width: 470px) {
-            width: 145px;
-          }
   
           .main-wrapper-cards-container__img{
             position: relative;
@@ -83,98 +79,27 @@
             font-weight: 400;
             background-color: rgb(218, 122, 241);
             color: white;
-            padding: 4px;
-            height: 55px;
+            padding: 6px;
+          }
+
+          .main-wrapper-cards-container__button_add:focus, .main-wrapper-cards-container__button_add:hover{
+            opacity: .8;
           }
   
           .main-wrapper-cards-container__title{
-            font-size: 26px;
+            font-size: 20px;
+            font-weight: 400;
             text-align: center;
           }
   
           .main-wrapper-cards-container__price{
             text-align: center;
             color: #f01313;
-            font-size: 22px;
+            font-size: 16px;
             margin-top: auto;
           }
-  
         }
       }
-
-      .main-wrapper-slider {
-        width: 1200px;
-        height: 300px;
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 30px;
-        border-radius: 30px;
-    
-        @media (max-width: 1200px) {
-          width: 95%;
-          margin: 0 auto 50px auto;
-        }
-    
-        .main-wrapper-slider-wrapper {
-          display: flex;
-          transition: transform 0.3s ease; 
-    
-          .main-wrapper-slider-wrapper-card {
-            width: 300px;
-            height: 300px;
-            background-color: rgb(60, 59, 59);
-    
-            @media (max-width: 386px) {
-              width: 357px;
-            }
-            
-    
-            .main-wrapper-slider-wrapper-card-picture {
-              object-fit: cover;
-              width: 300px;
-              height: 300px;
-              padding-right: 10px;
-    
-              @media (max-width: 386px) {
-                width: 357px;
-              }
-            } 
-        }
-      }
-      .main-wrapper-slider__prev, .main-wrapper-slider__next {
-        position: absolute;
-        top: 120px;
-        font-size: 60px;
-        padding: 7px;
-        height: 60px;
-        width: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: white;
-        background-color: rgb(177, 162, 87);
-        border: none;
-        border-radius: 50%;
-        z-index: 1;
-        cursor: pointer;
-    
-        @media (max-width: 700px) {
-          font-size: 40px;
-          padding: 5px;
-          height: 50px;
-          width: 50px;
-        }
-      }
-    
-      .main-wrapper-slider__prev {
-          left: 10px;
-      }
-    
-      .main-wrapper-slider__next {
-          right: 10px;
-      }
-    }
   }
 }
 

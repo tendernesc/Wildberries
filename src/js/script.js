@@ -22,7 +22,8 @@ document.body.append(root);
 //создание шапки проекта
 const header = createElement('header', 'header', root, '', 'header');
 const headerTop = createElement('div', 'header-top', header, '');
-const wildberriesLogo = createElement('h4','header-top__text', headerTop, 'Wildberries');
+const wildberriesLogo = createElement('a','header-top__text', headerTop, 'Wildberries');
+wildberriesLogo.setAttribute('href', '#');
 const searchInput = createElement('input','header-top__input', headerTop, '');
 searchInput.placeholder = 'Поиск...';
 const notFoundMessage = createElement('p', 'header__not-found', header, 'Не найдено');
@@ -56,8 +57,8 @@ const totalPrice = createElement('h3','header-top__basket-container__total', bas
 getName();
 
 async function createSlider(data) {
-  const slider = createElement('div', 'main-wrapper-slider', wrapper, '');
-  const sliderWrapper = createElement('div', 'main-wrapper-slider-wrapper', slider, '');
+  const slider = createElement('div', 'header-slider', header, '');
+  const sliderWrapper = createElement('div', 'header-slider-wrapper', slider, '');
 
   let currentX = 0;
   const slideWidth = 300; 
@@ -65,8 +66,8 @@ async function createSlider(data) {
   for (let i = 0; i < data.length; i++) {
     const card = data[i];
     const randomParam = Math.floor(Math.random() * (1000 - 1 + 1) + 1);
-    const parag = createElement('div', 'main-wrapper-slider-wrapper-card', sliderWrapper, '');
-    const img = createElement('img', 'main-wrapper-slider-wrapper-card-picture', parag, '');
+    const parag = createElement('div', 'header-slider-wrapper-card', sliderWrapper, '');
+    const img = createElement('img', 'header-slider-wrapper-card-picture', parag, '');
     img.src = card.picture + `?random=${randomParam}`;
     img.alt = card.title;
   }
@@ -75,7 +76,7 @@ async function createSlider(data) {
   const visibleSlides = 4; 
   const maxVisibleSlides = totalSlides - visibleSlides;
 
-  const prev = createElement('button', 'main-wrapper-slider__prev', slider, '<');
+  const prev = createElement('button', 'header-slider__prev', slider, '<');
   prev.addEventListener('click', () => {
     if (currentX < 0) {
       currentX += slideWidth;
@@ -83,7 +84,7 @@ async function createSlider(data) {
     }
   });
 
-  const next = createElement('button', 'main-wrapper-slider__next', slider, '>');
+  const next = createElement('button', 'header-slider__next', slider, '>');
   next.addEventListener('click', () => {
     if (currentX > -slideWidth * maxVisibleSlides) {
       currentX -= slideWidth;
@@ -135,9 +136,11 @@ const cardsWrapper = createElement('div','main-wrapper-cards', wrapper,'');
 
 // Функция для создания карточек 
 async function printCards(cards) {
-  for (let i = 0; i < Math.min(cards.length, 8); i++) {
+  for (let i = 0; i < Math.min(cards.length, 7); i++) {
     const cardContainer = createElement('div', 'main-wrapper-cards-container', cardsWrapper, '');
     const card = cards[i];
+
+    //деструктуризация
     let {picture, title, id} = card;
     const randomParam = Math.floor(Math.random() * (1000 - 1 + 1) + 1);
     const imageCard = createElement('img', 'main-wrapper-cards-container__img', cardContainer, '');
